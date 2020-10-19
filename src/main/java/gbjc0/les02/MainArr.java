@@ -126,8 +126,8 @@ public class MainArr {
         массива на n позиций. Для усложнения задачи нельзя пользоваться вспомогательными массивами.
         */
         System.out.println("7. Смещаем массив на N");
-        int[] arr7 = fullArr(8, -9, 9);
-        int shift = 3;
+        int[] arr7 = fullArr(4, -9, 9);
+        int shift = -2;
         System.out.println(Arrays.toString(arr7) + " - исходный массив.");
         System.out.println("Сдвиг на N = " + shift);
         shiftArr(arr7, shift);
@@ -136,29 +136,46 @@ public class MainArr {
 
     public static void shiftArr(int[] arr, int shift) {
         int buffer;
-        for (int i = arr.length-1; i >= 0; i--) {
-            if (i - shift >= 0) {
-                buffer = arr[i];
-                arr[i] = arr[i - shift];
-                arr[i - shift] = buffer;
+        if (shift == 0) {
+            System.out.println("Величина смещения нулевая!");
+        } else if (shift > 0) {
+            for (int i = arr.length-1; i >= 0; i--) {
+                if (i - shift >= 0) {
+                    buffer = arr[i];
+                    arr[i] = arr[i - shift];
+                    arr[i - shift] = buffer;
+                }
             }
-        }
-//        System.out.println(Arrays.toString(arr) + " - промужеточно смещенный массив.");
-//        // тестирую некорректное начало "хвостика"
-        System.out.println("Элемент " + arr.length % shift + " сдвинуть на " + arr.length % shift + " и так " + (shift - arr.length % shift) + " ячейки");
-//        // корректирую некорректное начало "хвостика"
-//        int firstShiftElement = arr.length % shift;
-//        for (int i = 0; i < shift; i++) {
-//            buffer = arr[i];
-//            arr[i] = arr[firstShiftElement];
-//            arr[firstShiftElement] = buffer;
-//        }
+            System.out.println(Arrays.toString(arr) + " - промежуточно смещенный массив.");
+            // тестирую некорректное начало "хвостика"
+            System.out.println("Элемент " + arr.length % shift + " сдвинуть на " + arr.length % shift + " и так " + (shift - arr.length % shift) + " ячейки");
+            // корректирую некорректное начало "хвостика"
+            int firstShiftElement = arr.length % shift;         // какой первый элемент смещаем
+            int valueShiftElement = shift - firstShiftElement; // сколько ячеек смещаем с первым элементом
+            int counJ = 0;
+            for (int i = 0; i < valueShiftElement; i++) {
+                buffer = arr[firstShiftElement];
+                for (int j = firstShiftElement; j > counJ; j--) {
+                    arr[j] = arr[j-1];
+                }
+                arr[i] = buffer;
+                firstShiftElement++;
+                counJ++;
+            }
+        } else {
+            for (int i = arr.length-1; i >= 0; i--) {
+                if (i - shift >= 0) {
+                    buffer = arr[i];
+                    arr[i] = arr[i - shift];
+                    arr[i - shift] = buffer;
+                }
+            }
+            System.out.println(Arrays.toString(arr) + " - промежуточно смещенный массив.");
 
-
-        // первые числа массива смог заполнить только нулями
-        for (int j = 0; j < shift; j++) {
-            arr[j] = 0;
+            // тестирую некорректное начало "хвостика"
+            System.out.println("Элемент " + arr.length % shift + " сдвинуть на " + arr.length % shift + " и так " + (shift - arr.length % shift) + " ячейки");
         }
+
     }
 
     // заполняем массив случайными числами, задаем размер массива, max и min значение в нем
