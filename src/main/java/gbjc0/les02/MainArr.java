@@ -126,7 +126,7 @@ public class MainArr {
         массива на n позиций. Для усложнения задачи нельзя пользоваться вспомогательными массивами.
         */
         System.out.println("7. Смещаем массив на N");
-        int[] arr7 = fullArr(4, -9, 9);
+        int[] arr7 = fullArr(7, -9, 9);
         int shift = -2;
         System.out.println(Arrays.toString(arr7) + " - исходный массив.");
         System.out.println("Сдвиг на N = " + shift);
@@ -163,17 +163,34 @@ public class MainArr {
                 counJ++;
             }
         } else {
-            for (int i = arr.length-1; i >= 0; i--) {
-                if (i - shift >= 0) {
+            for (int i = 0; i < arr.length; i++) {
+                if (i + shift >= 0) {
                     buffer = arr[i];
-                    arr[i] = arr[i - shift];
-                    arr[i - shift] = buffer;
+                    arr[i] = arr[i + shift];
+                    arr[i + shift] = buffer;
                 }
             }
+
             System.out.println(Arrays.toString(arr) + " - промежуточно смещенный массив.");
 
             // тестирую некорректное начало "хвостика"
-            System.out.println("Элемент " + arr.length % shift + " сдвинуть на " + arr.length % shift + " и так " + (shift - arr.length % shift) + " ячейки");
+            System.out.println("Элемент " + (Math.abs(shift)) + " сдвинуть на " + (arr.length - (arr.length + shift)*2 ) + " и так " + (arr.length + shift) + " ячейки");
+            // корректирую некорректное начало "хвостика"
+            int firstShiftElement = Math.abs(shift);         // какой первый элемент смещаем
+            int valueShiftElement = arr.length + shift; // сколько ячеек смещаем с первым элементом
+            int countJ = arr.length - (arr.length + shift)*2;
+            System.out.println("countJ = " + countJ );
+            for (int i = countJ-1; i < countJ + valueShiftElement - 1; i++) {
+                buffer = arr[firstShiftElement];
+//                System.out.println("i " + i + "  buffer " + buffer);
+                for (int j = firstShiftElement; j < firstShiftElement + countJ; j++) {
+                    arr[j] = arr[j-1];
+//                    System.out.println("j " + j + " countJ " + countJ + " arr[j] " + arr[j]);
+                }
+                arr[firstShiftElement-1] = buffer;
+                firstShiftElement++;
+                //countJ++;
+            }
         }
 
     }
