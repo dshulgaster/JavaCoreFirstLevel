@@ -54,13 +54,14 @@ public class MainArr {
         // заполняем массив (по диаганали 1-ми)
         for (int i = 0; i < arr4.length; i++) {
             for (int j = 0; j < arr4[i].length; j++) {
-                if (i == j) {
+                if ((i == j) || (i + j == arr4[i].length - 1)) {    // i+j=4 - условие для второй диагонали
                     arr4[i][j] = 1;
                 } else {
                     arr4[i][j] = (int)(Math.random() * 10);
                 }
             }
         }
+
         // выводим массив
         for (int i = 0; i < arr4.length; i++) {
             for (int j = 0; j < arr4[i].length; j++) {
@@ -125,16 +126,57 @@ public class MainArr {
         (может быть положительным, или отрицательным), при этом метод должен сместить все элементы
         массива на n позиций. Для усложнения задачи нельзя пользоваться вспомогательными массивами.
         */
-        System.out.println("7. Смещаем массив на N");
+        System.out.println("7-1. Смещаем массив на N: способ 1");
         int[] arr7 = fullArr(7, -9, 9);
         int shift = -2;
         System.out.println(Arrays.toString(arr7) + " - исходный массив.");
         System.out.println("Сдвиг на N = " + shift);
-        shiftArr(arr7, shift);
+        shiftArr1(arr7, shift);
         System.out.println(Arrays.toString(arr7) + " - смещенный массив.");
+
+        System.out.println("7-2. Смещаем массив на N: способ 2 (в лоб)");
+        System.out.println(Arrays.toString(arr7) + " - исходный массив.");
+        shiftArr2Left(arr7);
+        System.out.println(Arrays.toString(arr7) + " - смещенный массив (на 1 элемент влево).");
+        shiftArr2Right(arr7);
+        System.out.println(Arrays.toString(arr7) + " - смещенный массив (на 1 элемент вправо).");
+        if (shift < 0) {
+            shift = -shift;
+            for (int i = 0; i < shift; i++) {
+                shiftArr2Left(arr7);
+            }
+            System.out.println(Arrays.toString(arr7) + " - смещенный массив (на N элементов влево).");
+        } else if (shift > 0) {
+            for (int i = 0; i < shift; i++) {
+                shiftArr2Right(arr7);
+            }
+            System.out.println(Arrays.toString(arr7) + " - смещенный массив (на N элементов вправо).");
+        } else {
+            System.out.println("Массив не смещается (сдвиг равен 0)!");
+        }
     }
 
-    public static void shiftArr(int[] arr, int shift) {
+    // смещение элементов на 1 позицию влево
+    public static void shiftArr2Left(int[] arr) {
+        int buffer;
+        buffer = arr[0];
+        for (int i = 0; i < arr.length-1; i++) {
+            arr[i] = arr[i + 1];
+        }
+        arr[arr.length-1] = buffer;
+    }
+
+    // смещение элементов на 1 позицию вправо
+    public static void shiftArr2Right(int[] arr) {
+        int buffer;
+        buffer = arr[arr.length-1];
+        for (int i = arr.length-1; i > 0; i--) {
+            arr[i] = arr[i - 1];
+        }
+        arr[0] = buffer;
+    }
+
+    public static void shiftArr1(int[] arr, int shift) {
         int buffer;
         if (shift == 0) {
             System.out.println("Величина смещения нулевая!");

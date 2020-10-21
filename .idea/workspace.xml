@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="13c5cac7-65cd-4954-b9fc-47f413dec168" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/src/main/java/gbjc0/les03/MainQuizy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/gbjc0/les03/MainQuizy.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/gbjc0/les02/MainArr.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/gbjc0/les02/MainArr.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -26,16 +26,16 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/gbjc0/les02/MainArr.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="130">
-              <caret line="148" column="44" selection-start-line="148" selection-start-column="40" selection-end-line="148" selection-end-column="44" />
+            <state relative-caret-position="61">
+              <caret line="137" selection-start-line="137" selection-end-line="137" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/gbjc0/les03/MainQuizy.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="170">
@@ -60,6 +60,7 @@
     <findStrings>
       <find>+=</find>
       <find>stri</find>
+      <find>диаго</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -71,8 +72,8 @@
       <list>
         <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/src/main/java/gbjc0/les01/MainApp.java" />
-        <option value="$PROJECT_DIR$/src/main/java/gbjc0/les02/MainArr.java" />
         <option value="$PROJECT_DIR$/src/main/java/gbjc0/les03/MainQuizy.java" />
+        <option value="$PROJECT_DIR$/src/main/java/gbjc0/les02/MainArr.java" />
       </list>
     </option>
   </component>
@@ -193,7 +194,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.MainQuizy">
+  <component name="RunManager" selected="Application.MainArr">
     <configuration name="MainApp" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="gbjc0.les01.MainApp" />
       <module name="les01" />
@@ -235,8 +236,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.MainQuizy" />
         <item itemvalue="Application.MainArr" />
+        <item itemvalue="Application.MainQuizy" />
         <item itemvalue="Application.MainApp" />
       </list>
     </recent_temporary>
@@ -256,6 +257,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1295" height="695" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2534413" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -304,13 +306,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/gbjc0/les02/MainArr.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="130">
-          <caret line="148" column="44" selection-start-line="148" selection-start-column="40" selection-end-line="148" selection-end-column="44" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/gbjc0/les01/MainApp.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="130">
@@ -325,6 +320,13 @@
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/gbjc0/les02/MainArr.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="61">
+          <caret line="137" selection-start-line="137" selection-end-line="137" />
         </state>
       </provider>
     </entry>
