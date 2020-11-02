@@ -6,6 +6,7 @@ public class Cats extends Animals {
 //    private static int limitDistanceJumping = 2;
 //    public static String kindOfAnimal = "Cat";
     public String color;
+    public static int countCats;
 
     public void setParameters(int limitDistanceRunning, int limitDistanceSwimming, int limitDistanceJumping) {
         super.limitDistanceRunning = limitDistanceRunning;
@@ -31,11 +32,13 @@ public class Cats extends Animals {
 
     public Cats(String name) {
         super(name);
+        countCats++;
     }
 
     public Cats(String name, String color) {
         super(name);
         this.color = color;
+        countCats++;
     }
 
     @Override

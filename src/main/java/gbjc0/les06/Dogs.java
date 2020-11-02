@@ -2,6 +2,7 @@ package gbjc0.les06;
 
 public class Dogs extends Animals {
     public String color;
+    public static int countDogs;
 
     public void setParameters(int limitDistanceRunning, int limitDistanceSwimming, int limitDistanceJumping) {
         super.limitDistanceRunning = limitDistanceRunning;
@@ -27,11 +28,13 @@ public class Dogs extends Animals {
 
     public Dogs(String name) {
         super(name);
+        countDogs++;
     }
 
     public Dogs(String name, String color) {
         super(name);
         this.color = color;
+        countDogs++;
     }
 
     @Override

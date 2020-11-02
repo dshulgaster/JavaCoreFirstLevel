@@ -6,6 +6,7 @@ public abstract class Animals {
     protected int limitDistanceRunning;
     protected int limitDistanceSwimming;
     protected int limitDistanceJumping;
+    public static int countAnimal;
 
     public abstract void setParameters(int limitDistanceRunning, int limitDistanceSwimming, int limitDistanceJumping);
 
@@ -19,6 +20,7 @@ public abstract class Animals {
 
     public Animals(String name) {
         this.name = name;
+        countAnimal++;
     }
 
     public void infoAboutAnimal() {
@@ -27,15 +29,15 @@ public abstract class Animals {
 
     public void animalRunning(int distance) {
 //        this.distance = distance;
-        System.out.println("Животное пробежало " + distance + " метров.");
+        System.out.println(" пробежал " + distance + " метров.");
     }
 
     public void animalSwimming(int distance) {
-        System.out.println("Животное проплыло " + distance + " метров.");
+        System.out.println(" проплыл " + distance + " метров.");
     }
 
     public void animalJumping(int heght) {
-        System.out.println("Животное подпрыгнуло на " + heght + " метров.");
+        System.out.println(" подпрыгнул на " + heght + " метров.");
     }
 
     public abstract boolean isAbleRunning(int distance);
