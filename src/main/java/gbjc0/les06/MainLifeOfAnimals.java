@@ -10,16 +10,6 @@ public class MainLifeOfAnimals {
     public static Dogs[] dog = new Dogs[totalDogs];
 
     public static void main(String[] args) {
-        /*
-        // проверка работы toString для родителя
-        Animals animal = new Animals("Черепашка-ниндзя");
-        System.out.println(animal.toString());
-        animal.animalRunning(450);
-        animal.animalSwimming(217);
-        animal.animalJumping(7);
-        System.out.println();
-        */
-
         fillCats();         // заполняем котов
         fillDogs();         // заполняем собак
         checkAnimal(cat);   // проверяем котов
